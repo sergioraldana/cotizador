@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- cotizador de seguros-->
+    <script type="text/javascript" src="js/jspdf.min.js"></script>
+    <script type="text/javascript" src="js/cotizador.js"></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/d7aee1479b.js" crossorigin="anonymous"></script>
+    <title>Cotizador de seguros</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	  <a class="navbar-brand" href="#"><span class="fas fa-user-shield"></span> Aseguradora TK-U</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="index.html">Cotizador online <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Contacto</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+  <main class="container">
+  <h1>Cotizador de seguros</h1>
+  <section>
+    <form id="form">
+      <div class="form-group">
+      <label for="nombreAsegurado">Nombre completo:</label>
+      <input class="form-control" type="text" name="nombreAsegurado" id="nombreAsegurado">
+      <div>
+        <br>
+      <div class="form-group">
+      <label for="edadAsegurado">Ingrese su edad:</label>
+      <input class="form-control" type="number" name="edadAsegurado" id="edadAsegurado">
+      <div>
+        <br>
+      <div class="form-group">
+      <label for="seleccionarEstadoCivil">Estado civil:</label>
+      <select class="form-control" id="seleccionarEstadoCivil" onchange='checkvalue(this.value)'>
+        <option>Soltero</option>
+        <option>Casado</option>
+      </select>
+      <div>
+        <br>
+      <div class="form-group">
+      <label for="edadConyuge" id="labelEdadConyuge" style='display:none'>Ingrese la edad de su conyuge:</label>
+      <input class="form-control" type="number" name="edadConyuge" id="edadConyuge" style='display:none'>
+      <div>
+        <br>
+      <div class="form-group">
+      <label for="seleccionarHijos">¿Tiene hijos menores de 21 años?:</label>
+      <select class="form-control" id="seleccionarHijos" onchange='checkvalue2(this.value)'>
+        <option>No</option>
+        <option>Si</option>
+      </select>
+      <div>
+        <br>
+      <div class="form-group">
+      <label for="numeroHijos" id="labelNumeroHijos" style='display:none'>Ingrese la cantidad de hijos menores de 21 años:</label>
+      <input class="form-control" type="number" name="numeroHijos" id="numeroHijos" style='display:none'>
+      <div>
+    <button class="btn btn-primary" type="button" name="button" onclick="obtenerDatos()">Generar cotización</button>
+    </form>
+  </section>
+  <div id="resultado">
+    <h2>Su cotización</h2>
+    <ul>
+      <li>Su nombre: <span id="name"></span></li>
+      <li>Su edad: <span id="edad"></span></li>
+      <li>Su estado civil: <span id="civil"></span></li>
+      <li>Precio base: <span id="1"></span></li>
+      <li>Recargos por edad: <span id="2"></span></li>
+      <li> Recargos por conyuge: <span id="3"></span></li>
+      <li>Recargos por hijos: <span id="4"></span></li>
+      <li>Total a pagar: <span id="5"></span></li>
+    </ul>
+  </div>
+    </main>
+  <footer class="footer pb-2 pt-4 bg-light">
+  		<div class="container">
+  			<p class="text-muted small">Hecho con <span class="fas fa-heart"></span> por: Sergio Renato Aldana Alvarez</p>
+  		</div>
+  	</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+</html>
