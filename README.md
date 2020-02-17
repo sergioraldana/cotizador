@@ -1,6 +1,6 @@
 # cotizador
 Para solucionar el problema del cotizador se utilizó la siguiente metodología.
-1. Se determinaron 4 variables principales: recargos por edad (recargoEdad), recargos por edad del conyuge (recargosConyuge), regargos por hijos mejores de 21 años (recargosHijos) y totalPagar (suma de precio base más todos los recargos calculados).
+1. Se determinaron 4 variables principales: recargos por edad (recargoEdad), recargos por edad del conyuge (recargosConyuge), regargos por hijos menores de 21 años (recargosHijos) y totalPagar (suma de precio base más todos los recargos calculados).
 2. Se analizó la lógica para para variable y sus restricciones, considerando que era necesario validar si la persona era soltera o no para el calculo del recargo por conyuge, para los casos en los que no aplicará se enviá un valor 0 para no afectar el resultado.
 3. Se investigó como calcular la edad calculando la fecha actual con la fecha de nacimiento, pero la solución a este problema requiere el manejo conceptual de objetos de tiempo que aun no se dominan por lo que se opto a la solución de ingreso de edad directa.
 4. En resumen podría decir que este proyecto me ayudó a entender la relación de JavaScript con HTML y como este puede obtener información del DOM y modificarlo.
