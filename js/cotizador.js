@@ -58,7 +58,7 @@ function obtenerDatos () {
   if (edadConyuge < 30 && estadoCivil === "Casado") {
     var recargoConyuge = (precioBase * 0.01 );
   } else if (edadConyuge >= 30 && edadConyuge < 40 && estadoCivil === "Casado") {
-    var recargoConyuge = (precioBase * 0.02 && estadoCivil === "Casado");
+    var recargoConyuge = (precioBase * 0.02);
   } else if (edadConyuge  >= 40 && edadConyuge < 50 && estadoCivil === "Casado") {
     var recargoConyuge = (precioBase * 0.03);
   }  else if (edadConyuge  >= 50 && edadConyuge < 70 && estadoCivil === "Casado") {
@@ -95,7 +95,7 @@ function obtenerDatos () {
 }
 
 function genPDF () {
-  var doc = new jsPDF();
+  var doc = new jsPDF('p', 'mm', [216, 279]);
   doc.fromHTML($('#resultado').get(0), 20, 20,{
         'width' :500 });
 
